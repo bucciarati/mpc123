@@ -1,0 +1,15 @@
+mpc123 TODO list
+
+Started:
+Fernando Vezzosi <fvezzosi at masobit.net>, Sat Dec  3 22:48:02 CET 2005
+
+For version 1.0:
+- command line option to loop playlist (repeat functionality)
+- make it usable by frontends
+  - add all commands like forward, backward, pause, ..
+  - conform to other similar programs, but only if there is a widely-used way
+- make a decent localization system, and localize in few languages
+
+Hypotesis:
+- maybe create a logo ?
+- add support for id3 tags ? (do mpc files support it?)

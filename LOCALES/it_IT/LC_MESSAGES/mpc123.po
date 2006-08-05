@@ -1,0 +1,111 @@
+# /*
+# *  mpc123 - Musepack Console audio player
+# *  Copyright (C) 2005 Fernando Vezzosi <fvezzosi at masobit.net>
+# *
+# *  i18n support by Piero Bozzolo
+# *
+# *  This program is free software; you can redistribute it and/or modify
+# *  it under the terms of the GNU General Public License as published by
+# *  the Free Software Foundation; either version 2 of the License, or
+# *  (at your option) any later version.
+# *
+# *  This program is distributed in the hope that it will be useful,
+# *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+# *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# *  GNU General Public License for more details.
+# *
+# *  You should have received a copy of the GNU General Public License
+# *  along with this program; if not, write to the Free Software Foundation,
+# *  Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+# */
+# Begin italian translation
+
+msgid "Using ao driver \"%s\" (libao id %d)\n"
+msgstr "Driver selezionato \"%s\" (libao id %d)\n"
+msgid "Could not open audio output: [%d] %s"
+msgstr "Impossibile aprire la periferica di output: [%d] %s"
+msgid "Out of memory (needed 0x%08x bytes)"
+msgstr "Memoria terminata (necessari 0x%08x bytes)"
+msgid " version %d.%d.%d\n"
+msgstr " versione %d.%d.%d\n"
+msgid   "Options supported:\n"
+msgstr "Opzioni supportate:\n"
+msgid "\nUsage: %s [options] [file1 [file2 [..]]]\n\n"
+"Options supported:\n"
+"   --verbose or -v          Increase verbosity\n"
+"   --quiet or -q            Quiet mode (no title or boilerplate)\n"
+"   --gain N or -g N         Set gain (audio volume) to N (0-100)\n"
+"   -o dt                    Set output devicetype to dt\n"
+"   --audiodevice N or -a N  Use N for audio-out\n"
+"   --au N or -u N           Use au file N for output\n"
+"   --cdr N or -c N          Use raw file N for output\n"
+"   --wav N or -w N          Use wave file N for output\n"
+"   --list N or -@ N         Use playlist N as list of Musepack files\n"
+"   --random or -Z           Play files randomly until interrupted\n"
+"   --shuffle or -z          Shuffle list of files before playing\n"
+"   --help or -h             Print this help screen\n"
+"   --version or -V          Print mpc123 version string\n"
+
+msgstr "\nUtilizzo: %s [opzioni] [file1 [file2 [..]]]\n\n"
+"   --quiet or -q            Modalita' silenziosa (nessun output a video)\n"
+"   --verbose or -v          Aumenta informazioni\n"
+"   --gain N or -g N         Imposta guadagno (volume audio) ad N (0-100)\n"
+"   -o dt                    Imposta il tipo di device a dt\n"
+"   --audiodevice N or -a N  Utilizza n come device audio\n"
+"   --au N or -u N           Utilizza il formato file au N come output\n"
+"   --cdr N or -c N          Utilizza il formato file raw N come output\n"
+"   --wav N or -w N          Utilizza il formato file wav N come output\n"
+"   --list N or -@ N         Utilizza la playlist N come lista di file Musepack\n"
+"   --random or -Z           Riproduce i brani a caso\n"
+"   --shuffle or -z          Mescola la playlist\n"
+"   --help or -h             Visualizza questa schermata\n"
+"   --version or -V          Visualizza la versione di mpc123\n"
+msgid "Not a valid musepack file"
+msgstr "File musepac non valido"
+msgid "Error initializing decoder"
+msgstr "Errore nell'inizializzazione del decoder"
+msgid  "Could not initialize audio library: error %d"
+msgstr "Impossibile inizializzare la libreria audio: error %d"
+msgid  "End of file after %d samples"
+msgstr "Fine del file dopo %d parti"
+msgid "Error while decoding -- maybe corrupted data?"
+msgstr "Errore durante la decodifica -- dati corrotti?"
+msgid "Total samples decoded: %u\n"
+msgstr "Totale parti decodificate: %u\n"
+msgid "Couldn't open file \"%s\": [%d] %s"
+msgstr "Impossibile aprire il file \"%s\": [%d] %s"
+msgid "Unknown reason"
+msgstr "Errore sconosciuto"
+msgid "Segmentation Fault. Backtrace follows.\n"
+"NOTE: if you didn't compile with ``make DEBUG=1'', then\n"
+"  *   this info is probably mostly useless;\n"
+"  *   recompile with debug activated and try to crash\n"
+"  *   mpc123 again :)\n\n"
+msgstr "Errore di segmentazione. Segue analisi traccie.\n"
+"ATTENZIONE: Se non compili con ``make DEBUG=1'', queste\n"
+"  *   informazioni saranno del tutto inutili;\n"
+"  *   ricompila mpc123 ancora, e ritenta il crash\n\n"
+msgid "Aborting\n"
+msgstr "Annulando\n"
+msgid "Got signal %d.."
+msgstr "Ricevuto segnale %d.."
+msgid "Value %s out of range, try values between 0 and 100"
+msgstr "Il valore %s fuori intervallo, prova valori tra 0 e 100"
+msgid "Error populating playlist from file \"%s\": error %d"
+msgstr "Errore durante il riempimento della playlist dal file \"%s\": errore n. %d"
+msgid "Error populating playlist from command line: error %d"
+msgstr "Errore durante il riempimento della playlist dalla linea di comando: errore n. %d"
+msgid "Could not open playlist \"%s\": %s\n"
+msgstr "Impossibile aprire la playlist \"%s\": %s\n"
+msgid "Playlist has %d elements\n"
+msgstr "La playlist ha %d elementi\n"
+msgid "Playing Musepack audio stream from \"%s\"...\n"
+msgstr "Riproduzione brano Musepack da \"%s\"...\n"
+msgid "Stream play returned [%d]%s"
+msgstr "La riproduzione dello stream ha ritornato  [%d]%s"
+msgid "Error choosing method for stream: \"%s\"\n"
+msgstr "Errore durante la scelta del metodo di stream: \"%s\"\n"
+msgid "Can't open %s, unable to shuffle the playlist"
+msgstr "Impossibile aprire %s, impossibile mescolare la playlist"
+msgid "Can't read 4 bytes from %s\n"
+msgstr "Non posso leggere 4 bytes da %s\n"
