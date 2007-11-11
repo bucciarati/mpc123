@@ -5,6 +5,7 @@ Fernando Vezzosi <fvezzosi at masobit.net>, Sat Dec  3 22:48:02 CET 2005
 
 For version 1.0:
 - command line option to loop playlist (repeat functionality)
+- show playback times at runtime (maybe only in -v output)
 - make it usable by frontends
   - add all commands like forward, backward, pause, ..
   - conform to other similar programs, but only if there is a widely-used way

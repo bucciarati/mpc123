@@ -76,7 +76,7 @@ static void usage(const char *name){
 }
 
 int main(int argc, char ** argv){
-  char c='\0';
+  int c=0;
   int ret=0;
   playlist_t pl;
 
