@@ -1,6 +1,6 @@
 /*
  *  mpc123 - Musepack Console audio player
- *  Copyright (C) 2005, 2006 Fernando Vezzosi <fvezzosi at masobit.net>
+ *  Copyright (C) 2005-2007 Fernando Vezzosi <fvezzosi at masobit.net>
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -32,7 +32,7 @@
 
 #  define PACKAGE "mpc123"
 #  define VERS_NAME	"mpc123"
-#  define COPYRIGHT	"(C) 2005, 2006 Fernando Vezzosi <fvezzosi at masobit.net>"
+#  define COPYRIGHT	"(C) 2005-2007 Fernando Vezzosi <fvezzosi at masobit.net>"
 /* don't touch these fields, as they are automatically
  * changed by the Makefile building process
  */
