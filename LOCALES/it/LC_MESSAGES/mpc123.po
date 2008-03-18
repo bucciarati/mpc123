@@ -22,14 +22,19 @@
 
 msgid "Using ao driver \"%s\" (libao id %d)\n"
 msgstr "Driver selezionato \"%s\" (libao id %d)\n"
-msgid "Could not open audio output: [%d] %s"
-msgstr "Impossibile aprire la periferica di output: [%d] %s"
-msgid "Out of memory (needed 0x%08x bytes)"
-msgstr "Memoria terminata (necessari 0x%08x bytes)"
-msgid " version %d.%d.%d\n"
-msgstr " versione %d.%d.%d\n"
-msgid   "Options supported:\n"
+
+msgid "Could not open audio output: [%d] %s\n"
+msgstr "Impossibile aprire la periferica di output: [%d] %s\n"
+
+msgid "Out of memory (needed 0x%08x bytes)\n"
+msgstr "Memoria terminata (necessari 0x%08x bytes)\n"
+
+msgid "mpc123 version %d.%d.%d\n"
+msgstr "mpc123 versione %d.%d.%d\n"
+
+msgid "Options supported:\n"
 msgstr "Opzioni supportate:\n"
+
 msgid "\nUsage: %s [options] [file1 [file2 [..]]]\n\n"
 "Options supported:\n"
 "   --verbose or -v          Increase verbosity\n"
@@ -60,22 +65,31 @@ msgstr "\nUtilizzo: %s [opzioni] [file1 [file2 [..]]]\n\n"
 "   --shuffle or -z          Mescola la playlist\n"
 "   --help or -h             Visualizza questa schermata\n"
 "   --version or -V          Visualizza la versione di mpc123\n"
-msgid "Not a valid musepack file"
-msgstr "File musepac non valido"
-msgid "Error initializing decoder"
-msgstr "Errore nell'inizializzazione del decoder"
-msgid  "Could not initialize audio library: error %d"
-msgstr "Impossibile inizializzare la libreria audio: error %d"
-msgid  "End of file after %d samples"
+
+msgid "Not a valid musepack file\n"
+msgstr "File musepack non valido\n"
+
+msgid "Error initializing decoder\n"
+msgstr "Errore nell'inizializzazione del decoder\n"
+
+msgid "Could not initialize audio library: error %d\n"
+msgstr "Impossibile inizializzare la libreria audio: error %d\n"
+
+msgid "End of file after %d samples"
 msgstr "Fine del file dopo %d parti"
-msgid "Error while decoding -- maybe corrupted data?"
-msgstr "Errore durante la decodifica -- dati corrotti?"
+
+msgid "Error while decoding -- maybe corrupted data?\n"
+msgstr "Errore durante la decodifica -- dati corrotti?\n"
+
 msgid "Total samples decoded: %u\n"
 msgstr "Totale parti decodificate: %u\n"
-msgid "Couldn't open file \"%s\": [%d] %s"
-msgstr "Impossibile aprire il file \"%s\": [%d] %s"
+
+msgid "Couldn't open file \"%s\": [%d] %s\n"
+msgstr "Impossibile aprire il file \"%s\": [%d] %s\n"
+
 msgid "Unknown reason"
 msgstr "Errore sconosciuto"
+
 msgid "Segmentation Fault. Backtrace follows.\n"
 "NOTE: if you didn't compile with ``make DEBUG=1'', then\n"
 "  *   this info is probably mostly useless;\n"
@@ -84,28 +98,41 @@ msgid "Segmentation Fault. Backtrace follows.\n"
 msgstr "Errore di segmentazione. Segue analisi traccie.\n"
 "ATTENZIONE: Se non compili con ``make DEBUG=1'', queste\n"
 "  *   informazioni saranno del tutto inutili;\n"
-"  *   ricompila mpc123 ancora, e ritenta il crash\n\n"
+"  *   ricompila mpc123 con il debugging attivato, e\n"
+"  *   prova a riprodurre l'errore :)\n\n"
+
 msgid "Aborting\n"
 msgstr "Annulando\n"
+
 msgid "Got signal %d.."
 msgstr "Ricevuto segnale %d.."
-msgid "Value %s out of range, try values between 0 and 100"
-msgstr "Il valore %s fuori intervallo, prova valori tra 0 e 100"
-msgid "Error populating playlist from file \"%s\": error %d"
-msgstr "Errore durante il riempimento della playlist dal file \"%s\": errore n. %d"
-msgid "Error populating playlist from command line: error %d"
-msgstr "Errore durante il riempimento della playlist dalla linea di comando: errore n. %d"
+
+msgid "Value %s out of range, try values between 0 and 100\n"
+msgstr "Il valore %s e` fuori intervallo, prova valori tra 0 e 100\n"
+
+msgid "Error populating playlist from file \"%s\": error %d\n"
+msgstr "Errore durante il riempimento della playlist dal file \"%s\": errore n. %d\n"
+
+msgid "Error populating playlist from command line: error %d\n"
+msgstr "Errore durante il riempimento della playlist dalla linea di comando: errore n. %d\n"
+
 msgid "Could not open playlist \"%s\": %s\n"
 msgstr "Impossibile aprire la playlist \"%s\": %s\n"
+
 msgid "Playlist has %d elements\n"
 msgstr "La playlist ha %d elementi\n"
+
 msgid "Playing Musepack audio stream from \"%s\"...\n"
-msgstr "Riproduzione brano Musepack da \"%s\"...\n"
-msgid "Stream play returned [%d]%s"
-msgstr "La riproduzione dello stream ha ritornato  [%d]%s"
+msgstr "Riproduzione traccia Musepack da \"%s\"...\n"
+
+msgid "Stream play returned [%d] %s"
+msgstr "La riproduzione dello stream ha ritornato [%d] %s"
+
 msgid "Error choosing method for stream: \"%s\"\n"
 msgstr "Errore durante la scelta del metodo di stream: \"%s\"\n"
+
 msgid "Can't open %s, unable to shuffle the playlist"
 msgstr "Impossibile aprire %s, impossibile mescolare la playlist"
+
 msgid "Can't read 4 bytes from %s\n"
 msgstr "Non posso leggere 4 bytes da %s\n"

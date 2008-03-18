@@ -26,6 +26,7 @@
 #include <unistd.h>
 #include <stdarg.h>
 #include <fcntl.h>
+#include <libintl.h>
 
 #include "mpc123.h"
 
@@ -50,7 +51,7 @@ opts_t options={
 };
 
 static void version(){
-  fprintf(stderr, VERS_NAME " version %d.%d.%d\n",
+  fprintf(stderr, _("mpc123 version %d.%d.%d\n"),
           VERS_MAJOR, VERS_MINOR, VERS_REV);
   fprintf(stderr, "Copyright %s\n", COPYRIGHT);
 }
@@ -80,7 +81,6 @@ int main(int argc, char ** argv){
   int ret=0;
   playlist_t pl;
 
-
   /*  mpc_bool_t mpc_ret=FALSE;*/
   struct option myOpt[] = {
     {"verbose", ARG_NO, 0, 'v'},
@@ -97,6 +97,10 @@ int main(int argc, char ** argv){
     {"version", ARG_NO, 0, 'V'},
     {NULL, 0, 0, '\0'}
   };
+
+  setlocale(LC_ALL, "");
+  bindtextdomain(PACKAGE, LOCALEDIR);
+  textdomain(PACKAGE);
 
 #ifdef DEBUG
   /* see glibc-doc, chapter "Debugging Memory Allocation"
@@ -127,27 +131,27 @@ int main(int argc, char ** argv){
       case 'q':			/* be asocial */
         options.verbosity=0;
         break;
-      case '@':
+      case '@':     /* playlist */
         options.playlist=optarg;
         break;
-      case 'o':
+      case 'o':     /* output driver */
         options.ao_driver=optarg;
         break;
-      case 'a':
+      case 'a':     /* libao device to use */
         options.ao_dev=optarg;
         break;
-      case 'w':
+      case 'w':     /* output to .wav */
         options.ao_driver="wav";
         options.foutput=optarg;
         break;
-      case 'u':
+      case 'u':     /* output to .au */
         options.ao_driver="au";
         options.foutput=optarg;
         break;
-      case 'c':
+      case 'c':     /* output to raw pcm */
         options.ao_driver="raw";
         options.foutput=optarg;
-      case 'g':
+      case 'g':     /* set gain */
         options.volume=atof(optarg)/100.0;
         if(options.volume<0.0 || options.volume>1.0){
           dief("Value %s out of range, try values between 0 and 100\n", optarg);

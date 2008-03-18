@@ -145,7 +145,7 @@ int mpc123_ao_init(void ** d, mpc_streaminfo * streaminfo){
   }
   
   if( !data->ao_dev ){
-    dief("Could not open audio output: [%d] %s\n", errno, strerror(errno));
+    dief(_("Could not open audio output: [%d] %s\n"), errno, strerror(errno));
   }
 
   if(opt_head)
@@ -189,7 +189,7 @@ int mpc123_ao_play(void * d, MPC_SAMPLE_FORMAT * buffer, unsigned samples){
   }
 
   if(!output){
-    dief("Out of memory (needed 0x%08x bytes)\n", bytes);
+    dief(_("Out of memory (needed 0x%08x bytes)\n"), bytes);
   }
 
   /* code stolen from xmms-musepack */

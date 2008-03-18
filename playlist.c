@@ -139,7 +139,7 @@ int do_play_playlist(playlist_t *pl){
                                    &mpc123_general_reader, &data)) == 0){
       /* play it ;) */
       ret=do_play_stream(mpc123_general_reader, &data);
-      debugf("Stream play returned [%d]%s", ret, ret ? " !!" : "");
+      debugf("Stream play returned [%d] %s", ret, ret ? " !!" : "");
 
       /* clean up (close fds, etc..) */
       do_cleanup_stream(mpc123_general_reader, &data);

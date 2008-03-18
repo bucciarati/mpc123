@@ -27,8 +27,14 @@
 
 #  include <stdint.h>
 
+# include <libintl.h>
+
 #  include <mpcdec/config_types.h>
 #  include <mpcdec/mpcdec.h>
+
+#  ifndef LOCALEDIR
+#    define LOCALEDIR "/usr/share/locale" /* this is the Debian default */
+#  endif
 
 #  define PACKAGE "mpc123"
 #  define VERS_NAME	"mpc123"
@@ -38,7 +44,7 @@
  */
 #  define VERS_MAJOR	0
 #  define VERS_MINOR	2
-#  define VERS_REV	0
+#  define VERS_REV	3
 
 #  define COPYRIGHT_NOTICE VERS_NAME " Copyright " COPYRIGHT "\n" \
 	"This is free software, meaning it comes under the terms of the\n" \
@@ -50,8 +56,8 @@
 
 #  define _GETOPT_FLAGS "zZvhqV@:o:a:g:w:u:c:"
 
-/* #  define _(x) gettext(x)*/
-#  define _(x) (x)
+#  define _(x) gettext(x)
+/* #  define _(x) (x) */
 
 
 /* macros for debugging output.
