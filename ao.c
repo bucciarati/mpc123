@@ -67,6 +67,9 @@ int mpc123_ao_init(void ** d, mpc_streaminfo * streaminfo){
 
   *d=malloc(sizeof(mpc123_ao_data));
   mpc123_ao_data * data=(mpc123_ao_data *) *d;
+
+  data->output_buffer=NULL;
+  data->output_buffer_size=0U;
   
   ao_initialize();
 

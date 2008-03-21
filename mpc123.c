@@ -26,6 +26,7 @@
 #include <unistd.h>
 #include <stdarg.h>
 #include <fcntl.h>
+#include <locale.h>
 #include <libintl.h>
 
 #include "mpc123.h"
