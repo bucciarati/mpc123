@@ -97,7 +97,7 @@ int populate_playlist_from_argv(playlist_t * pl, char ** argv,
       debugf("element \"%s\" ", argv[i]);
       sl=strlen(argv[i]);
       pl->files[i]=(char*)malloc(sl+1);
-      strncpy(pl->files[i], argv[i], sl);
+      strncpy(pl->files[i], argv[i], sl+1);
       debugf("        \"%s\"", pl->files[i]);
     }
   }
