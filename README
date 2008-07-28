@@ -1,6 +1,6 @@
 /*
  *  mpc123 - Musepack Console audio player
- *  Copyright (C) 2005-2007 Fernando Vezzosi <fvezzosi at masobit.net>
+ *  Copyright (C) 2005-2008 Fernando Vezzosi <fvezzosi at masobit.net>
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -110,8 +110,10 @@ select the alsa09 (for example) driver, and the program will default the
 output device to some usable value ("/dev/dsp" for oss, "default" for alsa)
 
 * Hacking with mpc123
-Before you start hacking with mpc123, be sure you can use tla or bazaar;
-a good starting point is the arch wiki at http://wiki.gnuarch.org/
+Before you start hacking with mpc123, be sure you can use Mercurial;
+a good starting point is the Mercurial wiki at http://www.selenic.com/mercurial
+
+Our repository is at: hg clone http://mpc123.sf.net/hg/mpc123
 
 When hacking (programming and testing mpc123), be sure to turn the debug flags
 on. This can be done in a couple of ways:

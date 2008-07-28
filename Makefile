@@ -1,7 +1,7 @@
 #!/usr/bin/make -f
 
 # mpc123 - Musepack Console audio player
-# Copyright (C) 2005-2007 Fernando Vezzosi <fvezzosi at masobit.net>
+# Copyright (C) 2005-2006 Fernando Vezzosi <fvezzosi at linuxvar.it>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -45,9 +45,6 @@ MOS := $(POS:%.po=%.mo)
 # very rudimentary dependency checking
 DEPS := $(patsubst %.c, %.o, $(filter-out $(TARGET).c, $(wildcard *.c)))
 
-# exclude gnuarch files, precious files and .dotfiles
-TAR_EXCLUDED += \\{arch} .arch-ids $(wildcard ++*) $(wildcard .?*)
-
 $(TARGET): $(DEPS) $(TARGET).c $(MOS)
 	@echo Building mpc123 version $(MAJOR).$(MINOR) ...
 	$(CC) $(CPPFLAGS) $(CFLAGS) $(LDFLAGS) -o $@ $(DEPS) $(TARGET).c
@@ -58,11 +55,10 @@ clean:
 	$(RM) tags $(DEPS) $(TARGET) $(MOS)
 
 tags: $(wildcard *.[ch])
-	$(TAGSPRG) -R --exclude=\{arch} ./
+	$(TAGSPRG) -R --exclude=.hg ./
 
 tarball: clean
-	cd ../ &&\
-	tar zcf ./mpc123-$$(date "+%Y%m%d").tar.gz $(foreach f, ${TAR_EXCLUDED}, --exclude=${f}) $${OLDPWD##*/}
+	hg archive -t tbz2 ../mpc123-$$(date "+%Y%m%d").tar.bz2
 
 $(MOS): $(POS)
 	$(foreach po, $(POS), msgfmt $(po) -o $(po:%.po=%.mo);)
