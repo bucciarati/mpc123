@@ -22,30 +22,27 @@
 
 #include "mpc123.h"
 
-#include <mpcdec/config_types.h>
-#include <mpcdec/mpcdec.h>
-
 /* read wrapper */
-static mpc_int32_t mpc123_file_read(void *t, void *ptr, mpc_int32_t size){
-  reader_data *data=(reader_data*) t;
+static mpc_int32_t mpc123_file_read(mpc_reader *t, void *ptr, mpc_int32_t size){
+  reader_data *data=(reader_data*) t->data;
   return read(data->fd, ptr, size);
 }
 
 /* seek wrapper */
-static mpc_bool_t mpc123_file_seek(void *t, mpc_int32_t offset){
-  reader_data *data=(reader_data*) t;
+static mpc_bool_t mpc123_file_seek(mpc_reader *t, mpc_int32_t offset){
+  reader_data *data=(reader_data*) t->data;
   lseek(data->fd, offset, SEEK_SET);
-  return TRUE;
+  return MPC_TRUE;
 }
 
-static mpc_int32_t mpc123_file_tell(void *t){
-  reader_data *data=(reader_data*) t;
+static mpc_int32_t mpc123_file_tell(mpc_reader *t){
+  reader_data *data=(reader_data*) t->data;
   return lseek(data->fd, 0, SEEK_CUR);
 }
 
 /* get filesize */
-static mpc_int32_t mpc123_file_get_size(void *t){
-  reader_data *data=(reader_data*) t;
+static mpc_int32_t mpc123_file_get_size(mpc_reader *t){
+  reader_data *data=(reader_data*) t->data;
   off_t old_offset=lseek(data->fd, 0, SEEK_CUR);	/* save old pos */
   mpc_int32_t toret=lseek(data->fd, 0, SEEK_END);
 
@@ -56,8 +53,8 @@ static mpc_int32_t mpc123_file_get_size(void *t){
 }
 
 /* on an empty disk, you can seek() forever */
-static mpc_bool_t mpc123_file_canseek(void *t){
-  return TRUE;
+static mpc_bool_t mpc123_file_canseek(mpc_reader *t){
+  return MPC_TRUE;
 }
 
 /*
@@ -65,12 +62,12 @@ static mpc_bool_t mpc123_file_canseek(void *t){
  * handles plain files
  */
 mpc_reader mpc123_file_reader={
-  .read=mpc123_file_read,
-  .seek=mpc123_file_seek,
-  .tell=mpc123_file_tell,
-  .get_size=mpc123_file_get_size,
-  .canseek=mpc123_file_canseek,
-  .data=NULL		/* reader_data * data */
+  .read = mpc123_file_read,
+  .seek = mpc123_file_seek,
+  .tell = mpc123_file_tell,
+  .get_size = mpc123_file_get_size,
+  .canseek = mpc123_file_canseek,
+  .data = NULL		/* reader_data * data */
 };
 
 /* vim:ft=c:tw=78:ts=2:et:cin:

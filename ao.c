@@ -144,9 +144,9 @@ int mpc123_ao_init(void ** d, mpc_streaminfo * streaminfo){
     data->ao_dev=ao_open_live(ao_drvnum, &ao_fmt, opt_head);
   }else{
     /* output to file (act as a decoder) */
-    data->ao_dev=ao_open_file(ao_drvnum, options.foutput, TRUE, &ao_fmt, NULL);
+    data->ao_dev=ao_open_file(ao_drvnum, options.foutput, MPC_TRUE, &ao_fmt, NULL);
   }
-  
+
   if( !data->ao_dev ){
     dief(_("Could not open audio output: [%d] %s\n"), errno, strerror(errno));
   }
@@ -175,6 +175,9 @@ int mpc123_ao_play(void * d, MPC_SAMPLE_FORMAT * buffer, unsigned samples){
   unsigned char * output;
   unsigned bytes=samples * 2;   /* 16 bit == 2 bytes */
 
+  if(!bytes)
+    return 0;
+
   const unsigned pSize = 16;
   const int clip_min    = -1 << (pSize - 1);
   const int clip_max    = (1 << (pSize - 1)) - 1;
@@ -192,7 +195,8 @@ int mpc123_ao_play(void * d, MPC_SAMPLE_FORMAT * buffer, unsigned samples){
   }
 
   if(!output){
-    dief(_("Out of memory (needed 0x%08x bytes)\n"), bytes);
+    sayf(0, "Out of memory (needed 0x%08x bytes)\n", bytes);
+    return 0;
   }
 
   /* code stolen from xmms-musepack */

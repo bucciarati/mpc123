@@ -31,9 +31,9 @@
  */
 int do_play_stream(mpc_reader * the_reader, reader_data * data){
   mpc_streaminfo tmp_stream_info;
-  mpc_decoder mpc123_decoder;
-  mpc_int32_t mpc_ret;
-  mpc_uint32_t vbrAcc=0, vbrUpd=0;
+  mpc_demux *mpc123_decoder = NULL;
+  mpc_frame_info frame;
+  mpc_status err;
   int played=0;
 
   void * ao_data=NULL;
@@ -44,19 +44,12 @@ int do_play_stream(mpc_reader * the_reader, reader_data * data){
   unsigned bytes_from_decoder=0;
 
   /* read file's streaminfo data */
-  mpc_streaminfo_init(&tmp_stream_info);
-  if( (mpc_ret=mpc_streaminfo_read(&tmp_stream_info, the_reader))
-      != ERROR_CODE_OK){
-    debugf("mpc_streaminfo_read()=%d", mpc_ret);
+  mpc123_decoder = mpc_demux_init(the_reader);
+  if( !mpc123_decoder ){
     die("Not a valid musepack file\n");
   }
 
-  /* initialize decoder with the appropriate file reader */
-  mpc_decoder_setup(&mpc123_decoder, the_reader);
-  if( !(mpc_ret=mpc_decoder_initialize(&mpc123_decoder, &tmp_stream_info)) ){
-    debugf("mpc_decoder_initialize()=%d", mpc_ret);
-    die("Error initializing decoder\n");
-  }
+  mpc_demux_get_info(mpc123_decoder, &tmp_stream_info);
 
   if( mpc123_ao_init(&ao_data, &tmp_stream_info) != 0 ){
     dief("Could not initialize audio library: error %d\n", errno);
@@ -64,21 +57,21 @@ int do_play_stream(mpc_reader * the_reader, reader_data * data){
 
   /* decoding loop */
   while(1){
-    decoded_samples=mpc_decoder_decode(&mpc123_decoder, buffer,
-                                       &vbrAcc, &vbrUpd);
+    frame.buffer = buffer;
+    err = mpc_demux_decode(mpc123_decoder, &frame);
 
-    if( !decoded_samples ){      /* eof */
+    if( err != MPC_STATUS_OK ){      /* eof */
       debugf("End of file after %d samples", total_decoded);
       break;
     }
 
-    if( decoded_samples == -1 ){ /* decoding error */
+    if( err == -1 ){ /* decoding error */
       debug("Error decoding stream.");
       say(0, "Error while decoding -- maybe corrupted data?\n");
       break;
     }
 
-/*    debug(" <%d %d %d>", vbrAcc, vbrUpd, vbrUpd * 44100 / 1152 / 100);*/
+    decoded_samples = frame.samples;
     total_decoded += decoded_samples;
     bytes_from_decoder = decoded_samples * sizeof(float) * 2;
 

@@ -29,8 +29,9 @@
 
 # include <libintl.h>
 
-#  include <mpcdec/config_types.h>
-#  include <mpcdec/mpcdec.h>
+#  include <mpc/mpcdec.h>
+#  include <mpc/streaminfo.h>
+#  include <mpc/mpc_types.h>
 
 #  ifndef LOCALEDIR
 #    define LOCALEDIR "/usr/share/locale" /* this is the Debian default */
@@ -44,7 +45,7 @@
  */
 #  define VERS_MAJOR	0
 #  define VERS_MINOR	2
-#  define VERS_REV	4
+#  define VERS_REV	5
 
 #  define COPYRIGHT_NOTICE VERS_NAME " Copyright " COPYRIGHT "\n" \
 	"This is free software, meaning it comes under the terms of the\n" \
