@@ -55,10 +55,10 @@ clean:
 	$(RM) tags $(DEPS) $(TARGET) $(MOS)
 
 tags: $(wildcard *.[ch])
-	$(TAGSPRG) -R --exclude=.hg ./
+	$(TAGSPRG) -R --exclude=.git ./
 
 tarball: clean
-	hg archive -t tbz2 ../mpc123-$$(date "+%Y%m%d").tar.bz2
+	git archive --format tar --prefix mpc123-$$(git describe)/ HEAD | gzip > ../mpc123-$$(git describe).tar.gz
 
 $(MOS): $(POS)
 	$(foreach po, $(POS), msgfmt $(po) -o $(po:%.po=%.mo);)
