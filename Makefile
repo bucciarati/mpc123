@@ -47,7 +47,7 @@ DEPS := $(patsubst %.c, %.o, $(filter-out $(TARGET).c, $(wildcard *.c)))
 
 $(TARGET): $(DEPS) $(TARGET).c $(MOS)
 	@echo Building mpc123 version $(MAJOR).$(MINOR) ...
-	$(CC) $(CPPFLAGS) $(CFLAGS) $(LDFLAGS) -o $@ $(DEPS) $(TARGET).c
+	$(CC) $(CPPFLAGS) $(CFLAGS) -o $@ $(DEPS) $(TARGET).c $(LDFLAGS)
 
 .PHONY: clean tarball
 
