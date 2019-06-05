@@ -50,7 +50,7 @@
 #  define COPYRIGHT_NOTICE VERS_NAME " Copyright " COPYRIGHT "\n" \
 	"This is free software, meaning it comes under the terms of the\n" \
 	"GNU General Public License (GNU GPL) version 2 or above, see\n" \
-	"http://www.gnu.org/ and http://mpc123.sourceforge.net/ for \n" \
+	"http://www.gnu.org/ and https://github.com/bucciarati/mpc123 for \n" \
 	"+ info about the lack of any kind of warranty,\n" \
 	"+ source code, and\n" \
 	"+ license details\n"
