@@ -121,7 +121,7 @@ Both debugging macros automatically add a newline at the end of the given string
 ```C
 /*
  *  mpc123 - Musepack Console audio player
- *  Copyright (C) 2005-2008 Fernando Vezzosi <fvezzosi at masobit.net>
+ *  Copyright (C) 2005-2008 Fernando Vezzosi <github-mpc123 at repnz.net>
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by

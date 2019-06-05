@@ -1,6 +1,6 @@
 # /*
 # *  mpc123 - Musepack Console audio player
-# *  Copyright (C) 2005 Fernando Vezzosi <fvezzosi at masobit.net>
+# *  Copyright (C) 2005 Fernando Vezzosi <github-mpc123 at repnz.net>
 # *
 # *  i18n support by Piero Bozzolo
 # *

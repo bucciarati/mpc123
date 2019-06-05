@@ -1,7 +1,7 @@
 #!/usr/bin/make -f
 
 # mpc123 - Musepack Console audio player
-# Copyright (C) 2005-2006 Fernando Vezzosi <fvezzosi at linuxvar.it>
+# Copyright (C) 2005-2006 Fernando Vezzosi <github-mpc123 at repnz.net>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
