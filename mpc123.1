@@ -4,7 +4,7 @@ mpc123 \- your handy Musepack audio player
 .SH SYNOPSIS
 .B mpc123 [options] file(s)
 .SH DESCRIPTION
-mpc123 is a command-line player for the Musepack audio compression
+mpc123 is a command\-line player for the Musepack audio compression
 format. mpc123 reads mpc audio files and decodes them to the devices
 specified on the command line.
 
@@ -14,11 +14,11 @@ to the process, thus usually pressing ^C will act as a "next-button" for the
 player.
 
 .SH OPTIONS
-.IP "\fB--gain N\fP, \fB-g N\fP" 4
-Set gain (audio volume) to \fBN\fP (0-100 inclusive, deafult 100,
+.IP "\fB\-\-gain N\fP, \fB\-g N\fP" 4
+Set gain (audio volume) to \fBN\fP (0\-100 inclusive, default 100,
 0 mutes sound)
 
-.IP "\fB-o driver\fP" 4
+.IP "\fB\-o driver\fP" 4
 Set output devicetype to \fBdriver\fP; possible drivers include:
 .IP "  \fBoss\fP" 4
 Linux Open Sound System
@@ -33,8 +33,8 @@ Analog Real Time System (kde sound daemon)
 .IP "  \fBnull\fP" 4
 Debugging output target
 
-.IP "\fB--audiodevice dev\fP, \fB-a dev\fP" 4
-Use \fBdev\fP for audio-out; If not specified, the program tries to pick
+.IP "\fB\-\-audiodevice dev\fP, \fB\-a dev\fP" 4
+Use \fBdev\fP for audio\-out; If not specified, the program tries to pick
 some sane defaults, based on the used audio output driver. Common devices
 include:
 .IP "  \fB/dev/dsp\fP or \fB/dev/dsp1\fP" 4
@@ -42,37 +42,37 @@ for \fBoss\fP output
 .IP "  \fBdefault\fP or \fBhw:0\fP" 4
 for \fBalsa09\fP output
 
-.IP "\fB--au filename.au\fP, \fB-u filename.au\fP"
+.IP "\fB\-\-au filename.au\fP, \fB\-u filename.au\fP"
 Use au file \fBfilename.au\fP for output
 
-.IP "\fB--cdr filename.cdr\fP, \fB-c filename.cdr\fP"
+.IP "\fB\-\-cdr filename.cdr\fP, \fB\-c filename.cdr\fP"
 Use raw file \fBfilename.cdr\fP for output (this can be used directly
-with cdrecord's -audio option)
+with cdrecord's \-audio option)
 
-.IP "\fB--wav filename.wav\fP, \fB-w filename.wav\fP"
+.IP "\fB\-\-wav filename.wav\fP, \fB\-w filename.wav\fP"
 Use wave file \fBfilename.wav\fP for output
 
-.IP "\fB--list file\fP, \fB-@ file\fP"
+.IP "\fB\-\-list file\fP, \fB\-@ file\fP"
 Use playlist \fBfile\fP as list of Musepack files; The playlist format is
 simple: one file per line.
 You can easily generate a playlist for \fBmpc123\fP with the find(1)
 command:
-.IP "    find /path/to/musicroot -iname \\\\*.mpc -fprint \fBfile\fP" 4
+.IP "    find /path/to/musicroot \-iname \\\\*.mpc \-fprint \fBfile\fP" 4
 
-.IP "\fB--random\fP, \fB-Z\fP"
+.IP "\fB\-\-random\fP, \fB\-Z\fP"
 Play files randomly until interrupted
 
-.IP "\fB--shuffle\fP, \fB-z\fP"
+.IP "\fB\-\-shuffle\fP, \fB\-z\fP"
 Shuffle list of files before playing
 
-.IP "\fB--verbose\fP, \fB-v\fP"
-Increase verbosity (default verbosity is 0), the more -v, the more
+.IP "\fB\-\-verbose\fP, \fB\-v\fP"
+Increase verbosity (default verbosity is 0), the more \-v, the more
 verbose mpc123 becomes
 
-.IP "\fB--quiet\fP, \fB-q\fP"
+.IP "\fB\-\-quiet\fP, \fB\-q\fP"
 Reset verbosity to 0 (no title or boilerplate); this is the default
 
-.IP "\fB--help\fP, \fB-h\fP"
+.IP "\fB\-\-help\fP, \fB\-h\fP"
 Print the help screen, with some brief usage information
 
 .SH AUTHOR
