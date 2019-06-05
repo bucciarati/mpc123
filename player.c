@@ -41,7 +41,6 @@ int do_play_stream(mpc_reader * the_reader, reader_data * data){
   /* decode-phase stuff */
   MPC_SAMPLE_FORMAT buffer[MPC_DECODER_BUFFER_LENGTH];
   unsigned decoded_samples=0, total_decoded=0;
-  unsigned bytes_from_decoder=0;
 
   /* read file's streaminfo data */
   mpc123_decoder = mpc_demux_init(the_reader);
@@ -73,7 +72,6 @@ int do_play_stream(mpc_reader * the_reader, reader_data * data){
 
     decoded_samples = frame.samples;
     total_decoded += decoded_samples;
-    bytes_from_decoder = decoded_samples * sizeof(float) * 2;
 
     played=mpc123_ao_play(ao_data, (void *)buffer, decoded_samples * 2);
 
