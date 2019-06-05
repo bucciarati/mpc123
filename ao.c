@@ -123,6 +123,7 @@ int mpc123_ao_init(void ** d, mpc_streaminfo * streaminfo){
 
   /* initialize ao_format struct */
   /* XXX VERY WRONG */
+  memset(&ao_fmt, 0, sizeof(ao_fmt));
   ao_fmt.bits=16;       /*tmp_stream_info.average_bitrate;*/
   ao_fmt.rate=streaminfo->sample_freq;
   ao_fmt.channels=streaminfo->channels;
