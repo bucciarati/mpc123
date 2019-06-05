@@ -43,7 +43,7 @@ MOS := $(POS:%.po=%.mo)
 # very rudimentary dependency checking
 DEPS := $(patsubst %.c, %.o, $(filter-out $(TARGET).c, $(sort $(wildcard *.c))))
 
-$(TARGET): $(DEPS) $(TARGET).c $(MOS)
+$(TARGET): $(DEPS) $(TARGET).c $(TARGET).h $(MOS)
 	@echo Building mpc123 version $(MAJOR).$(MINOR) ...
 	$(CC) $(CPPFLAGS) $(CFLAGS) -o $@ $(DEPS) $(TARGET).c $(LDFLAGS)
 
