@@ -43,7 +43,7 @@ POS := $(wildcard LOCALES/*/LC_MESSAGES/*.po)
 MOS := $(POS:%.po=%.mo)
 
 # very rudimentary dependency checking
-DEPS := $(patsubst %.c, %.o, $(filter-out $(TARGET).c, $(wildcard *.c)))
+DEPS := $(patsubst %.c, %.o, $(filter-out $(TARGET).c, $(sort $(wildcard *.c))))
 
 $(TARGET): $(DEPS) $(TARGET).c $(MOS)
 	@echo Building mpc123 version $(MAJOR).$(MINOR) ...
