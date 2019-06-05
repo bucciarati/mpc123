@@ -45,7 +45,7 @@
  */
 #  define VERS_MAJOR	0
 #  define VERS_MINOR	2
-#  define VERS_REV	5
+#  define VERS_REV	6
 
 #  define COPYRIGHT_NOTICE VERS_NAME " Copyright " COPYRIGHT "\n" \
 	"This is free software, meaning it comes under the terms of the\n" \
